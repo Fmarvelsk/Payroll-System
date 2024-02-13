@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 183, 14%, 39%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4, 16.3%, 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 183, 85%, 20%;
+
+    --primary: 183, 85%, 20%;
+    --primary-opacity: 183, 85%, 20%, 0.1;
+    --primary-opacity-sample: 183, 85%, 20%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210, 40%, 98%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+
+    --header: 216, 5%, 18%;
+    --header-foreground: 208, 7%, 45%;
+    --header-accent: 167, 70%, 96%;
+    --header-secondary: 194, 76%, 92%;
+    --header-tertiary: 257, 78%, 98%;
+    --header-fourth: 219, 14%, 46%;
+
+    --primary-black: 245, 74%, 9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@media (min-width: 1300px) {
+  .legal-nav{
+    flex: 0 0 auto;
+  }
+}
+
+.legal-nav {
+    min-height: 50rem;
+    position: sticky;
+    top: 3rem;
+    width: 25rem;
+}
+.legal-content {
+  align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    min-height: 50rem;
+    
+}
+
+.terms > p {
+  margin-bottom: 1.5rem;
+}
