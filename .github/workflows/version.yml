@@ -1,0 +1,41 @@
+name: Version Bump and Tag
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  version-bump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Specify the Node.js version you want to use
+
+      - name: Clean working directory
+        run: |
+          git stash
+          echo "changes has been stashed"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Bump version
+        run: |
+          git config --global user.email "fmarvelsk@gmail.com"
+          git config --global user.name "Marvellous"
+          npm version patch -m "chore: bump version to %s"
+          git push origin dev --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
